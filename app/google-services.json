@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "556774380678",
+    "firebase_url": "https://medconnect-83c71.firebaseio.com",
+    "project_id": "medconnect-83c71",
+    "storage_bucket": "medconnect-83c71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556774380678:android:19693b79bd0729fc",
+        "android_client_info": {
+          "package_name": "sprinwood.medconnectdoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556774380678-5o3nt1ufdro1958ohl07tr8j2dg6ecbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCenpb1GJ_6MS9BXi_h7YqPabfsN9pvOf0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
