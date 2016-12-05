@@ -1,16 +1,25 @@
 package sprinwood.medconnectdoc;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -110,6 +119,7 @@ public class PatietsActivity extends AppCompatActivity {
                                     }
                                 };
                                 lvPatients.setAdapter(adapter);
+
                                 final DatabaseReference patiensAccepted = database.getReference("Accepted/" +
                                     String.valueOf(user.getUid()));
                                 patiensAccepted.addValueEventListener(new ValueEventListener() {
@@ -226,7 +236,32 @@ public class PatietsActivity extends AppCompatActivity {
                                         public void onCancelled(DatabaseError databaseError) {
                                             Log.e("The read failed: ", databaseError.getMessage());
                                         }
-                                    });
+                                    });/*
+                                        Log.e("MYTAG", "kek");
+                                        Activity context = PatietsActivity.this;
+                                        LinearLayout viewGroup = (LinearLayout) findViewById(R.id.popup);
+                                        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                                        View layout = layoutInflater.inflate(R.layout.activity_patient_info, viewGroup);
+                                        final PopupWindow popup = new PopupWindow(context);
+                                        popup.setContentView(layout);
+                                        popup.setWidth(600);
+                                        popup.setHeight(800);
+                                        popup.setFocusable(true);
+
+                                        // Clear the default translucent background
+                                        popup.setBackgroundDrawable(new BitmapDrawable());
+
+                                        // Displaying the popup at the specified location, + offsets.
+                                        popup.showAtLocation(layout, Gravity.CENTER, 50, 50);
+
+                                        // Getting a reference to Close button, and close the popup when clicked.
+                                        Button close = (Button) layout.findViewById(R.id.btnClosePatientInfo);
+                                        close.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                popup.dismiss();
+                                            }
+                                        });*/
                                     }
                                 });
                             }
