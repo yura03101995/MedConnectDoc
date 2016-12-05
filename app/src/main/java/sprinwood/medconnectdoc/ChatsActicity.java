@@ -79,6 +79,11 @@ public class ChatsActicity extends AppCompatActivity {
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         if(!(dataSnapshot.hasChild(idChat))){
                                             tvLastMessage.setText("Нет сообщений");
+                                        } else {
+                                            long lastNum = dataSnapshot.child(idChat).getChildrenCount();
+                                            String text = String.valueOf(dataSnapshot.child(idChat).child(String.valueOf(lastNum-1))
+                                                    .child("text").getValue());
+                                            tvLastMessage.setText(text);
                                         }
                                     }
 
